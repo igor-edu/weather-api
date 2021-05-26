@@ -177,7 +177,7 @@ function updateWeatherDiv() {
           new Date(item.dt_txt)
         )}</div>
         <div class="carousel__item--time">${item.dt_txt.slice(11, 16)}</div>
-        <div class="carousel__item--cloud-icon"><img src="http://openweathermap.org/img/wn/${
+        <div class="carousel__item--cloud-icon"><img src="https://openweathermap.org/img/wn/${
           item.weather[0].icon
         }@2x.png" alt="cloud icon"></div>
         <div class="carousel__item--temperature">${item.main.temp}&#176;C</div>
@@ -351,7 +351,7 @@ function handleSearchResultsList(e) {
   if (e.target.tagName !== 'LI') return;
   const li = e.target;
   const location = li.pointer;
-  const searchUrl = `http://api.openweathermap.org/data/2.5/forecast?lat=${location.latitude}&lon=${location.longitude}&units=metric&appid=00b8ed89379d910ed384cd51a8826016`;
+  const searchUrl = `https://api.openweathermap.org/data/2.5/forecast?lat=${location.latitude}&lon=${location.longitude}&units=metric&appid=00b8ed89379d910ed384cd51a8826016`;
 
   fetch(searchUrl)
     .then((res) => res.json())
