@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Weather</title>
+    <link
+      href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+      rel="stylesheet"
+      integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN"
+      crossorigin="anonymous"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Martel+Sans:wght@400;600;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="index.css" />
+  </head>
+
+  <body>
+    <form action="#" id="search-form" class="search__form">
+      <span>weather</span>
+      <input type="text" id="search-input" />
+      <i id="search-icon" class="fa fa-search" aria-hidden="true"></i>
+    </form>
+
+    <div class="search">
+      <div class="search__my-locations">
+        <h3 id="output-list-header">
+          Click on location below to find local weather
+        </h3>
+        <p id="no-search-results"></p>
+        <ul id="search-results-list">
+          <p>No search results yet... Search for any location above.</p>
+        </ul>
+
+        <h3>Remember the places that matter to you</h3>
+        <h4>My Saved Locations</h4>
+        <ul id="saved-locations-list" class="search__my-locations-list">
+          <p>No saved locations yet... Save your locations of interest.</p>
+        </ul>
+
+        <h4>Recent Searches</h4>
+        <ul id="recent-searches-list" class="search__recent-searches-list">
+          <p>No recent searches yet... Search for any location above.</p>
+        </ul>
+
+        <p id="close-search-div">
+          <span id="close-search-span"
+            ><i id="close-search-div-icon" class="fa fa-window-close"></i
+          ></span>
+        </p>
+      </div>
+    </div>
+
+    <div id="weather">
+      <h2 id="weather-heading">Weather forecast for the next five days</h2>
+      <h3>
+        Location: <span id="location-displayed">Search for location above</span>
+      </h3>
+      <p id="saved-to-my-locations">
+        <span id="add-to-my-locations" class="shown"
+          ><i class="fa fa-plus"></i> Add to My Locations</span
+        >
+        <span id="saved-in-my-locations">Saved In My Locations</span>
+      </p>
+
+      <div class="carousel">
+        <div class="carousel__left">
+          <div class="carousel__button--left">
+            <div class="carousel__arrow--left">&lt;</div>
+          </div>
+        </div>
+
+        <div class="carousel__center">
+          <div class="carousel__padding carousel__padding--left"></div>
+          <div class="carousel__frame">
+            <div id="carousel-moving" class="carousel__moving"></div>
+          </div>
+          <div class="carousel__padding carousel__padding--right"></div>
+        </div>
+
+        <div class="carousel__right">
+          <div class="carousel__button--right">
+            <div class="carousel__arrow--right">&gt;</div>
+          </div>
+        </div>
+      </div>
+      <!-- end of carousel -->
+
+      <p id="last-updated">Last updated today at <span>NA</span></p>
+    </div>
+    <!-- end of weather div -->
+
+    <div class="observations">
+      <div class="observations__left">
+        <h3>Observations</h3>
+        <p class="observations__left--time">Observed at <span></span></p>
+        <p class="observations__left--date"></p>
+      </div>
+
+      <div class="observations__right">
+        <div class="observations__right--top">
+          <p class="observations__right--temperature">
+            Temperature: <span></span>
+          </p>
+          <p class="observations__right--pressure">Pressure: <span></span></p>
+          <p class="observations__right--humidity">Humidity: <span></span></p>
+          <p class="observations__right--wind-speed">
+            Wind speed: <span></span>
+          </p>
+          <p class="observations__right--wind-direction">
+            Wind from: <span></span>
+          </p>
+        </div>
+
+        <div class="observations__right--bottom">
+          <p class="observations__right--station">
+            Observation Station: <span id="observation-station"></span>
+          </p>
+          <p class="observations__right--coordinates">
+            Latitude: <span id="observations-latitude"></span>
+          </p>
+          <p>Longitude: <span id="observations-longitude"></span></p>
+        </div>
+      </div>
+    </div>
+    <!-- end of observations -->
+
+    <footer>
+      <p>copyright &copy; <span>weatherman</span> 2020</p>
+    </footer>
+
+    <script src="index.js"></script>
+  </body>
+</html>

@@ -1,0 +1,368 @@
+body {
+  min-height: 100vh;
+  position: relative;
+  padding-bottom: 1px; }
+
+footer {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 3rem;
+  background-color: #05628c;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center; }
+  footer p {
+    padding-top: 3px; }
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0; }
+
+html {
+  font-size: 9px; }
+  @media (min-width: 768px) {
+    html {
+      font-size: 62.5%; } }
+
+body {
+  font-family: 'Martel Sans', sans-serif;
+  letter-spacing: 0.4px;
+  font-size: 1.5rem;
+  line-height: 2.5rem; }
+
+.carousel {
+  height: 300px;
+  overflow: hidden;
+  display: flex;
+  margin-top: 2rem; }
+  .carousel__left, .carousel__right {
+    height: 100%;
+    flex-basis: 20px;
+    flex-grow: 0;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center; }
+    @media (min-width: 768px) {
+      .carousel__left, .carousel__right {
+        flex-basis: 26px; } }
+  .carousel__left {
+    justify-content: flex-end; }
+  .carousel__button--left, .carousel__button--right {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #067eb3;
+    color: #fff;
+    font-size: 2rem;
+    height: 40%;
+    width: 100%; }
+    .carousel__button--left:hover, .carousel__button--right:hover {
+      cursor: pointer;
+      background-color: #079ada;
+      font-size: 2.6rem; }
+  .carousel__center {
+    border: 1px solid #e4e4e4;
+    flex-basis: calc(100% - 40px);
+    flex-grow: 0;
+    flex-shrink: 0;
+    height: 100%;
+    overflow-X: hidden;
+    transition: all 0.6s ease-out;
+    display: flex; }
+    @media (min-width: 768px) {
+      .carousel__center {
+        flex-basis: calc(100% - 52px); } }
+  .carousel__padding {
+    background-color: #e4e4e4;
+    height: 100%;
+    flex-grow: 0;
+    flex-shrink: 0;
+    flex-basis: 0; }
+  .carousel__frame {
+    height: 100%;
+    flex-basis: 0;
+    flex-grow: 0;
+    flex-shrink: 0;
+    overflow-X: auto;
+    transition: all 0.6s ease-out;
+    display: flex; }
+    .carousel__frame::-webkit-scrollbar {
+      height: 1.8rem; }
+    .carousel__frame::-webkit-scrollbar-track {
+      background: #e4e4e4; }
+    .carousel__frame::-webkit-scrollbar-thumb {
+      background: #067eb3;
+      border-radius: 1.5rem; }
+    .carousel__frame::-webkit-scrollbar-thumb:hover {
+      background: #079ada; }
+  .carousel__moving {
+    display: flex;
+    height: 100%; }
+  .carousel__item {
+    height: 100%;
+    flex-basis: 60px;
+    flex-grow: 0;
+    flex-shrink: 0;
+    overflow: hidden;
+    transition: all 0.6s ease-out;
+    display: flex; }
+    @media (min-width: 768px) {
+      .carousel__item {
+        flex-basis: 70px; } }
+    .carousel__item:not(:last-child) {
+      border-right: 1px solid #e4e4e4; }
+    .carousel__item--wind {
+      position: relative; }
+      .carousel__item--wind span {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%); }
+      .carousel__item--wind img {
+        width: 40px;
+        margin-top: 0.7rem; }
+    .carousel__item--basic {
+      flex-basis: 60px;
+      overflow: hidden;
+      flex-direction: column;
+      display: flex;
+      align-items: center;
+      justify-content: space-around;
+      align-content: space-around; }
+      @media (min-width: 768px) {
+        .carousel__item--basic {
+          flex-basis: 70px; } }
+      .carousel__item--basic img {
+        width: 50px; }
+    .carousel__item--added {
+      flex-basis: 180px;
+      display: flex;
+      align-items: center;
+      justify-content: space-around;
+      align-content: space-around;
+      flex-direction: column;
+      align-items: flex-start;
+      padding: 0.6rem;
+      background-color: #f9f8f7; }
+      @media (min-width: 768px) {
+        .carousel__item--added {
+          flex-basis: 210px; } }
+      .carousel__item--added p {
+        font-size: 1.3rem; }
+      .carousel__item--added p:not(:last-child) {
+        border-bottom: 1px solid grey; }
+      .carousel__item--added h4 {
+        font-weight: 800;
+        font-size: 1.6rem; }
+      .carousel__item--added span {
+        font-weight: 800; }
+    .carousel__item--basic, .carousel__item--added {
+      flex-grow: 0;
+      flex-shrink: 0; }
+    .carousel__item:hover {
+      cursor: pointer;
+      background-color: #067eb3; }
+      .carousel__item:hover .carousel__item--basic {
+        color: #fff; }
+    .carousel__item.open {
+      flex-basis: 240px;
+      background-color: #bbe9fd;
+      background-color: #067eb3; }
+      @media (min-width: 768px) {
+        .carousel__item.open {
+          flex-basis: 280px; } }
+      .carousel__item.open .carousel__item--basic {
+        color: #fff; }
+
+form {
+  height: 5rem;
+  background-color: #067eb3;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  align-content: space-around;
+  padding: 1rem 2rem;
+  margin-bottom: 2rem; }
+  form input {
+    flex-grow: 1;
+    height: 3rem;
+    padding: 0 0.5rem;
+    font-size: 1.55rem; }
+  form span {
+    font-size: 3rem;
+    text-transform: uppercase;
+    color: #fff;
+    font-weight: 900;
+    margin-right: 2rem;
+    max-height: 5rem;
+    display: none; }
+    @media (min-width: 576px) {
+      form span {
+        display: block;
+        padding-top: 6px; } }
+  form i#search-icon {
+    font-size: 2.5rem;
+    margin-left: 2rem;
+    color: #fff; }
+    form i#search-icon:hover {
+      cursor: pointer;
+      transform: scale(1.4); }
+
+.search {
+  max-height: 0rem;
+  overflow: hidden;
+  transition: 0.6s ease-out all;
+  position: absolute;
+  top: 5rem;
+  left: 0;
+  right: 0;
+  z-index: 1;
+  background-color: #fff;
+  border-bottom: 2px solid #067eb3;
+  line-height: 2.2rem; }
+  .search.open {
+    max-height: 80rem; }
+  .search__my-locations {
+    padding: 1rem 0.4rem; }
+    @media (min-width: 992px) {
+      .search__my-locations {
+        padding: 1rem; } }
+    .search__my-locations h3:nth-of-type(1) {
+      margin: 1.4rem 0 0.4rem 0; }
+    .search__my-locations h3:nth-of-type(2) {
+      margin: 3rem 0 0.6rem 0; }
+    .search__my-locations p#no-search-results {
+      background-color: #ffcccb;
+      padding: 0 0.5rem 0 2rem; }
+    .search__my-locations h4 {
+      font-size: 1.6rem; }
+      .search__my-locations h4:last-of-type {
+        margin-top: 1.5rem; }
+    .search__my-locations ul {
+      list-style: none;
+      background-color: #e4e4e4;
+      border-top: 2px solid #067eb3;
+      padding-bottom: 0.1rem; }
+      .search__my-locations ul p {
+        padding: 0.5rem 1rem 0; }
+      .search__my-locations ul li {
+        padding: 0.4rem 1rem 0;
+        margin: 1rem 0; }
+        .search__my-locations ul li:hover {
+          cursor: pointer;
+          background-color: #067eb3;
+          color: #fff; }
+    .search__my-locations p#close-search-div {
+      text-align: right;
+      margin: 1.2rem 0;
+      line-height: 0.8; }
+      .search__my-locations p#close-search-div span {
+        font-size: 3rem; }
+        .search__my-locations p#close-search-div span i:hover {
+          cursor: pointer;
+          color: tomato; }
+
+.observations {
+  display: flex;
+  flex-direction: column;
+  margin: 3rem 22px 5rem;
+  background-color: #e4e4e4;
+  padding: 6px; }
+  @media (min-width: 992px) {
+    .observations {
+      margin: 3rem 28px 5rem;
+      padding: 10px;
+      flex-direction: row; } }
+  @media (min-width: 1200px) {
+    .observations {
+      max-width: 1032px;
+      margin: 3rem auto 5rem; } }
+  .observations__left {
+    flex-grow: 0;
+    border-bottom: 1px solid #067eb3;
+    padding-bottom: 1.3rem; }
+    @media (min-width: 992px) {
+      .observations__left {
+        border-right: 2px solid #067eb3;
+        border-bottom: none;
+        padding-right: 10px;
+        padding-bottom: 0;
+        flex-basis: 25rem; } }
+  @media (min-width: 992px) {
+    .observations__right {
+      display: flex;
+      justify-content: space-around;
+      flex-basis: 100%; } }
+  .observations__right--top {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-content: flex-start;
+    border-bottom: 1px solid grey;
+    padding: 1rem 0; }
+    @media (min-width: 992px) {
+      .observations__right--top {
+        flex-grow: 0;
+        padding: 0;
+        border-bottom: none; } }
+  .observations__right--bottom {
+    padding-top: 1rem; }
+    @media (min-width: 992px) {
+      .observations__right--bottom {
+        padding: 0; } }
+  .observations__right p {
+    font-weight: 900;
+    font-size: 1.35rem; }
+    .observations__right p span {
+      font-weight: 400;
+      font-size: 1.4rem; }
+    .observations__right p span#observation-station {
+      display: block; }
+      @media (min-width: 576px) {
+        .observations__right p span#observation-station {
+          display: inline; } }
+
+#weather {
+  text-align: center;
+  margin-top: 3rem;
+  padding: 0 4px; }
+  @media (min-width: 992px) {
+    #weather {
+      padding: 0 8px; } }
+  @media (min-width: 1200px) {
+    #weather {
+      max-width: 1100px;
+      margin: 3rem auto 0; } }
+  #weather h2 {
+    margin-bottom: 1.5rem; }
+  #weather h3 {
+    margin-bottom: 0.5rem; }
+  #weather p#saved-to-my-locations {
+    text-align: center;
+    margin-bottom: 3rem; }
+    #weather p#saved-to-my-locations span#add-to-my-locations,
+    #weather p#saved-to-my-locations span#saved-in-my-locations {
+      color: #fff;
+      padding: 0.5rem 1rem 0;
+      font-size: 1.3rem;
+      border-radius: 2px;
+      display: none; }
+      #weather p#saved-to-my-locations span#add-to-my-locations.shown,
+      #weather p#saved-to-my-locations span#saved-in-my-locations.shown {
+        display: inline-block; }
+    #weather p#saved-to-my-locations span#add-to-my-locations {
+      background-color: #000; }
+      #weather p#saved-to-my-locations span#add-to-my-locations:hover {
+        cursor: pointer;
+        background-color: #067eb3; }
+    #weather p#saved-to-my-locations span#saved-in-my-locations {
+      background-color: #067eb3; }
+
+p#last-updated {
+  text-align: right;
+  margin-right: 26px; }

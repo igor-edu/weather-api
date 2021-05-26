@@ -1,0 +1,10 @@
+@mixin  ease-out {
+  transition: all 0.6s ease-out;
+}
+
+@mixin flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  align-content: space-around;
+}

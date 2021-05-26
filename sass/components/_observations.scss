@@ -1,0 +1,82 @@
+.observations {
+  display: flex;
+  flex-direction: column;
+  margin: 3rem $carousel-button-width-small + 2px 5rem;
+  background-color: $color-grey-primary;
+  padding: 6px;
+
+  @include desktops {
+    margin: 3rem $carousel-button-width-big + 2px 5rem;
+    padding: 10px;
+    flex-direction: row;
+  }
+
+  @include large {
+    max-width: 1032px;
+    margin: 3rem auto 5rem;
+  }
+
+  &__left {
+    flex-grow: 0;
+    border-bottom: 1px solid $color-blue-primary;
+    padding-bottom: 1.3rem;
+
+    @include desktops {
+      border-right: 2px solid $color-blue-primary;
+      border-bottom: none;
+      padding-right: 10px;
+      padding-bottom: 0;
+      flex-basis: 25rem;
+    }
+  }
+
+  &__right {
+    @include desktops {
+      display: flex;
+      justify-content: space-around;
+      flex-basis: 100%;
+    }
+
+    &--top {
+      flex-grow: 1;
+      display: flex;
+      flex-direction: column;
+      flex-wrap: wrap;
+      align-content: flex-start;
+      border-bottom: 1px solid grey;
+      padding: 1rem 0;
+
+      @include desktops {
+        flex-grow: 0;
+        padding: 0;
+        border-bottom: none;
+      }
+    }
+
+    &--bottom {
+      padding-top: 1rem;
+
+      @include desktops {
+        padding: 0;
+      }
+    }
+
+    p {
+      font-weight: 900;
+      font-size: 1.35rem;
+
+      span {
+        font-weight: 400;
+        font-size: 1.4rem;
+      }
+
+      span#observation-station {
+        display: block;
+
+        @include phones {
+          display: inline;
+        }
+      }
+    }
+  }
+}

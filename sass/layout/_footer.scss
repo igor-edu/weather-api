@@ -1,0 +1,16 @@
+footer {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 3rem;
+  background-color: darken($color: $color-blue-primary, $amount: 8);
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  p {
+    padding-top: 3px;
+  }
+}

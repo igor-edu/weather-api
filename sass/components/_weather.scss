@@ -1,0 +1,58 @@
+#weather {
+  text-align: center;
+  margin-top: 3rem;
+  padding: 0 4px;
+
+  @include desktops {
+    padding: 0 8px;
+  }
+
+  @include large {
+    max-width: 1100px;
+    margin: 3rem auto 0;
+  }
+
+  h2 {
+    margin-bottom: 1.5rem;
+  }
+
+  h3 {
+    margin-bottom: 0.5rem;
+  }
+
+  p#saved-to-my-locations {
+    text-align: center;
+    margin-bottom: 3rem;
+
+    span#add-to-my-locations,
+    span#saved-in-my-locations {
+      color: #fff;
+      padding: 0.5rem 1rem 0;
+      font-size: 1.3rem;
+      border-radius: 2px;
+      display: none;
+
+      &.shown {
+        display: inline-block;
+      }
+    }
+
+    span#add-to-my-locations {
+      background-color: #000;
+
+      &:hover {
+        cursor: pointer;
+        background-color: $color-blue-primary;
+      }
+    }
+
+    span#saved-in-my-locations {
+      background-color: $color-blue-primary;
+    }
+  }
+}
+
+p#last-updated {
+  text-align: right;
+  margin-right: $carousel-button-width-big;
+}
