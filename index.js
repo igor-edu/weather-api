@@ -1,3 +1,7 @@
+const API_TOKEN_MAPBOX =
+  'pk.eyJ1IjoiaWdvcmNvbCIsImEiOiJjazlzY3E0Y3kxMnlwM2hwbmpvc25raHBoIn0.C07xU-VzZpdFzHJCro2Qng';
+const APP_ID_OPENWEATHERMAP = '00b8ed89379d910ed384cd51a8826016';
+
 const searchDiv = document.querySelector('.search'),
   searchForm = document.getElementById('search-form'),
   searchInput = document.getElementById('search-input'),
@@ -323,7 +327,7 @@ function handleSearchForm(e) {
   setRecentSearches(searchInput.value);
   updateRecentSearchesList();
   const search = formatSearchText(searchInput.value);
-  const searchUrl = `https://api.mapbox.com/geocoding/v5/mapbox.places/${search}.json?access_token=${process.env.API_TOKEN_MAPBOX}`;
+  const searchUrl = `https://api.mapbox.com/geocoding/v5/mapbox.places/${search}.json?access_token=${API_TOKEN_MAPBOX}`;
 
   fetch(searchUrl)
     .then((res) => res.json())
@@ -351,7 +355,7 @@ function handleSearchResultsList(e) {
   if (e.target.tagName !== 'LI') return;
   const li = e.target;
   const location = li.pointer;
-  const searchUrl = `https://api.openweathermap.org/data/2.5/forecast?lat=${location.latitude}&lon=${location.longitude}&units=metric&appid=${process.env.APP_ID_OPENWEATHERMAP}`;
+  const searchUrl = `https://api.openweathermap.org/data/2.5/forecast?lat=${location.latitude}&lon=${location.longitude}&units=metric&appid=${APP_ID_OPENWEATHERMAP}`;
 
   fetch(searchUrl)
     .then((res) => res.json())
